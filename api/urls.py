@@ -1,5 +1,6 @@
 from django.urls import path, include
 
 urlpatterns = [
-    path("",include("roles.urls"))
+    path("roles/",include("roles.urls")),
+    path("users/",include("users.urls"))
 ]
