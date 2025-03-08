@@ -11,4 +11,9 @@ class UserViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         response = super().create(request, args, kwargs)
-        return Response({"message":"User Added Successfully"},status=status.HTTP_201_CREATED)
+        return Response(
+            data = {
+                "message":"User Added Successfully"
+            },
+            status=status.HTTP_201_CREATED
+        )

@@ -11,4 +11,9 @@ class RoleViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         response = super().create(request, args, kwargs)
-        return Response({"message": "Role Successfully created"}, status=status.HTTP_201_CREATED)
+        return Response(
+            data = {
+                "message": "Role Successfully created"
+            },
+            status=status.HTTP_201_CREATED
+        )
