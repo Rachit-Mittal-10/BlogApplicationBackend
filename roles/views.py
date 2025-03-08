@@ -6,10 +6,16 @@ from .serializers import RoleSerializers
 
 # Create your views here.
 class RoleViewSet(viewsets.ModelViewSet):
+    """
+    - creates the viewset for manages role instancaes and provides the basic CRUD operations.
+    """
     queryset = Roles.objects.all()
     serializer_class = RoleSerializers
 
     def create(self, request, *args, **kwargs):
+        """
+        : configuring the response for the post api for api/roles path
+        """
         response = super().create(request, args, kwargs)
         return Response(
             data = {
