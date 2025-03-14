@@ -3,10 +3,11 @@ from .serializers import LoginSerializer, RegisterSerializer
 from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 
 # Create your views here.
-class LoginView:
+class LoginView(TokenObtainPairView):
     serializer_class = LoginSerializer
 
 class RegisterView(CreateAPIView):
