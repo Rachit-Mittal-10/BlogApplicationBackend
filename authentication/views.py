@@ -11,6 +11,9 @@ class LoginView(TokenObtainPairView):
     serializer_class = LoginSerializer
 
 class RegisterView(CreateAPIView):
+    """
+        : configuring the response for POST for api path api/auth/register
+    """
     serializer_class = RegisterSerializer
 
     def post(self, request, *args, ** kwargs):
