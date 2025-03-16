@@ -21,4 +21,4 @@ class RegisterView(CreateAPIView):
         if serializer.is_valid():
             user = serializer.save()
             return Response({"message":"User Created successfully."},status=status.HTTP_201_CREATED)
-        return Response({"message":"User not created","error":serializer.errors},status=status.HTTP_400_BAD_REQUEST)
+        return Response({"message":"User Not Created","error":serializer.errors},status=status.HTTP_400_BAD_REQUEST)
