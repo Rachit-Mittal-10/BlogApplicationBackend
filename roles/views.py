@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, permissions
 from rest_framework.response import Response
 from .models import Roles
 from .serializers import RoleSerializers 
@@ -11,6 +10,7 @@ class RoleViewSet(viewsets.ModelViewSet):
     """
     queryset = Roles.objects.all()
     serializer_class = RoleSerializers
+    permission_classes = [permissions.IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
         """
