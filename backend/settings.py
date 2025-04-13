@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'roles',
     'users',
     'authentication',
+    'userblogrolemapping'
 ]
 
 MIDDLEWARE = [
