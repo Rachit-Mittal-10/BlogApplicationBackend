@@ -1,8 +1,8 @@
 from django.http import Http404
 from rest_framework import viewsets, status, permissions
 from rest_framework.response import Response
-from .models import Roles
-from .serializers import RoleSerializers 
+from .models import Roles, UserRole
+from .serializers import RoleSerializers, UserRoleSerializers 
 
 # Create your views here.
 class RoleViewSet(viewsets.ModelViewSet):
@@ -39,3 +39,15 @@ class RoleViewSet(viewsets.ModelViewSet):
             {"message": "Item deleted successfully"},
             status=status.HTTP_200_OK
         )
+    
+class UserRoleViewSet(viewsets.ModelViewSet):
+    """
+        - creates the viewsets for managing the user role api
+        - methods: [POST, GET, PATCH]
+    """
+    queryset = Roles.objects.all()
+    serializer_class = RoleSerializers
+    permission_classes = [permissions.IsAuthenticated]
+
+    def create(self,request,*args,**kwargs):
+        pass  
