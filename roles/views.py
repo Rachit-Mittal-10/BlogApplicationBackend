@@ -30,7 +30,9 @@ class RoleViewSet(viewsets.ModelViewSet):
             instance = self.get_object()
         except Http404:
             return Response(
-                {"message": "Item not found or already deleted"},
+                {
+                    "message": "Item not found or already deleted"
+                },
                 status=status.HTTP_404_NOT_FOUND
             )
 
