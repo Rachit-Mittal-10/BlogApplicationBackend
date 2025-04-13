@@ -4,4 +4,5 @@ urlpatterns = [
     path("roles/",include("roles.urls")),
     path("users/",include("users.urls")),
     path("auth/",include("authentication.urls")),
+    # path("blogs/",include("blogs.urls")),
 ]
